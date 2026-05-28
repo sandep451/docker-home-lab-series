@@ -24,6 +24,6 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Docker Build image
-      run: docker build -t gitflask-app .
+      run: docker build -t sandep451/gitflask-app ./EP9-CICD
     - name: Push Docker image
-      run: docker push gitflask-app
+      run: docker push sandep451/gitflask-app
