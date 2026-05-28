@@ -11,6 +11,7 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    environment: prod
 
     steps:
     - name: Checkout code
@@ -22,9 +23,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v4
-      with:
-        context: .
-        push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/ep9-cicd:latest
+    - name: Docker Build image
+      run: docker build -t gitflask-app .
+    - name: Push Docker image
+      run: docker push gitflask-app
