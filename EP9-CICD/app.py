@@ -1,6 +1,6 @@
 # Sample Flask application for EP9 - CI/CD
 
-from flask import flask
+from flask import Flask
 
 app = Flask(__name__)
 
