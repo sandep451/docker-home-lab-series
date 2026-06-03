@@ -1,3 +1,4 @@
 # Requirements for EP9 - CI/CD
 
 flask==2.2.3
+werkzeug==2.2.3
